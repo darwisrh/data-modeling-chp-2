@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> <!-- Bootstrap -->
+        <link rel="stylesheet" href="../public/css/home.css"> <!-- Custom CSS -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> <!-- Font -->
+        <link rel="icon" href="../public/assets/icons/favicon.ico"> <!-- favicon -->
+        <link rel="stylesheet" href="../public/assets/fontawesome/css/all.css"> <!-- fontawesome -->
+        <title>Home</title>
+    </head>
+
+    <body>
+
+<!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="ms-5 me-5" src="../public/assets/icons/logo.png" alt="DumbWays"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link me-5" href="/home" style="font-weight: 800;">Home</a>
+                    </li>
+                    {{#if login}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/project">Add Project</a>
+                    </li>
+                    {{/if}}
+                </ul>
+                {{#if login}}
+                    <p class="me-4 m-0">Halo {{user.name}}</p>
+                    <a class="nav-link me-4" href="/logout">Logout</a>
+                {{else}}
+                <a class="nav-link me-4" href="/register">Register</a>
+                <a class="nav-link me-4" href="/login">Login</a>
+                {{/if}}
+                <a class="btn btn-dark me-5 py-2 px-4" href="/contact">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+<!-- /NAVBAR/ -->
+
+<!-- MAIN SECTION -->
+
+    <div class="my-card my-5 p-5">
+        <div class="left-side">
+            <h2>Hi Welcome to My Hut</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, officia quasi! Quod reiciendis, molestiae voluptatum sed magni tempora! Cumque nihil illo cupiditate itaque? Earum, nostrum. Omnis odio eaque pariatur quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum suscipit quidem nihil nam sapiente officia repellat quasi, id eos molestias voluptatibus soluta doloribus nisi impedit reiciendis labore tempora illo et!
+            </p>
+            <table class="my-5">
+                <tr>
+                    <th><a href="mailto:bluemetalgd@gmail.com" class="btn btn-dark px-4 me-4">contact</a></th>
+                    <th><a href="https://drive.google.com/file/d/1L1dspMfrudSqLiMJzTAajMz0XZGIEu30/view?usp=sharing" target="_blank" class="a">Download CV <img src="../public/assets/icons/download.png" alt="dwnld"></a></th>
+                </tr>
+            </table>
+            <table class="table2">
+                <tr>
+                    <th><a href="https://web.facebook.com/darwis.r.3958/" target="_blank"><img class="img1" src="../public/assets/socmed/facebook.png" alt="fb"></a></th>
+                    <th><a href="https://www.instagram.com/darwisr_h/" target="_blank"><img class="img1" src="../public/assets/socmed/instagram.png" alt="ig"></a></th>
+                    <th><a href="https://twitter.com/DarwisR29" target="_blank"><img class="img1" src="../public/assets/socmed/twitter.png" alt="twt"></a></th>
+                    <th><a href="https://www.youtube.com/channel/UCZY1-DckZ0RFpLexMyiNrAw" target="_blank"><img class="img2" src="../public/assets/socmed/youtube.png" alt="yt"></a></th>
+                </tr>
+            </table>
+        </div>
+        <div class="right-side">
+            <div class="whole-card">
+                <img src="../public/assets/FB_IMG_1637236409187.jpg" alt="me:)">
+                <h5 class="mt-2 mb-0 fw-bold">Darwis Revi H</h5>
+                <p class="mb-2">Fullstack Developer</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card -->
+
+        <div class="container2">
+            <hr>
+            <div class="header">
+                <h1>MY PROJECT</h1>
+            </div>
+            <div class="card-container d-flex justify-content-center flex-wrap">
+                <div class="card-all">
+                    {{#each dataProjects}}
+                        <div class="card p-2 m-3" style="width: 18rem;">
+                            <img src="{{this.image}}" class="card-img-top" alt="...">
+                            <div class="card-body p-0">
+                                <a href="/detail-project/{{this.id}}"><h5 class="mt-1 mb-0">{{this.title}}</h5></a>
+                                <p class="duration">{{this.duration}}</p>
+                                <p class="desc">
+                                    {{this.description}}
+                                </p>
+                            </div>
+                            <div class="icons">
+                                <table>
+                                    <tr>
+                                        {{#if python}}
+                                        <th><i class="fa-brands fa-python fa-2x"></i></th>
+                                        {{/if}}
+                                        {{#if javascript}}
+                                        <th><i class="fa-brands fa-js fa-2x"></i></th>
+                                        {{/if}}
+                                        {{#if swift}}
+                                        <th><i class="fa-brands fa-swift fa-2x"></i></th>
+                                        {{/if}}
+                                        {{#if nodejs}}
+                                        <th><i class="fa-brands fa-node-js fa-2x"></i></th>
+                                        {{/if}}
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="buttons">
+                                {{#if login}}
+                                <a href="/edit-project/{{this.id}}" class="but1">Edit</a>
+                                <a href="/delete/{{this.id}}" class="but2">Delete</a>
+                                {{/if}}
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+    <!-- /Card/ -->
+
+
+<!-- /MAIN SECTION/ -->
+
+<!-- SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<!-- /SCRIPT/-->
+    </body>
+</html>

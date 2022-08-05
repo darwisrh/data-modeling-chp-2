@@ -1,0 +1,95 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(230, 230, 230);
+}
+
+/* NAVBAR */
+
+.navbar {
+    background-color: rgb(243, 243, 243) !important;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: black;
+}
+
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.collapse .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.collapse .btn:hover {
+    background-color: white;
+    color: black;
+}
+
+nav .dropdown {
+    display: none;
+}
+
+@media (max-width: 991px){
+    .navbar-nav .nav-link {
+        margin-left: 47px;
+    }
+
+    .collapse .btn {
+        margin-left: 47px;
+    }
+}
+
+/* /NAVBAR/ */
+
+/* CONTACT FORM */
+.container-fluid {
+    display: flex;
+    justify-content: center;
+}
+
+.container-fluid form {
+    width: 500px;
+}
+
+.container-fluid .container2 {
+    margin-top: 70px;
+    width: 500px;
+}
+
+.container-fluid .fw-bold {
+    text-align: center;
+    margin: 50px 0px 50px;
+}
+
+.container2 .alert {
+    box-sizing: border-box;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input:hover, textarea:hover, select:hover {
+    border: 1px solid black;
+}
+
+.buttons button {
+    padding: 8px 25px;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+.buttons button:hover {
+    background-color: white;
+    color: black;
+}
+
+@media (max-width: 540px){
+    .container-fluid form {
+        width: 300px;
+    }
+}
